@@ -12,6 +12,7 @@
         "security/ir.model.access.csv",
         "data/fleet_trip_sequence.xml",
         "data/fleet_trip_cost_type_data.xml",
+        "views/fleet_trip_views.xml",
     ],
     "images": ["static/description/banner.png"],
     "application": False,

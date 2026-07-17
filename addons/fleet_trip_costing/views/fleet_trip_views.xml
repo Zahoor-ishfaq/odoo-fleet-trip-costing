@@ -1,0 +1,144 @@
+<odoo>
+    <record id="fleet_trip_view_form" model="ir.ui.view">
+        <field name="name">fleet.trip.view.form</field>
+        <field name="model">fleet.trip</field>
+        <field name="arch" type="xml">
+            <form string="Fleet Trip">
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,in_progress,done"/>
+                </header>
+                <sheet>
+                    <field name="currency_id" invisible="1"/>
+                    <div class="oe_title">
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="vehicle_id"/>
+                            <field name="driver_id"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                        <group>
+                            <field name="route_from"/>
+                            <field name="route_to"/>
+                            <field name="is_return_empty"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                        </group>
+                        <group>
+                            <field name="odometer_start"/>
+                            <field name="odometer_end"/>
+                            <field name="distance_km"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Costs">
+                            <field name="cost_line_ids">
+                                <!-- PORT-19: switch <tree> to <list> on the 19.0 branch -->
+                                <tree editable="bottom">
+                                    <field name="cost_type_id"/>
+                                    <field name="date"/>
+                                    <field name="amount" sum="Total"/>
+                                    <field name="note"/>
+                                    <field name="currency_id" column_invisible="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Revenue &amp; Margin">
+                            <group>
+                                <field name="revenue"/>
+                                <field name="total_cost"/>
+                                <field name="cost_per_km"/>
+                                <field name="margin"/>
+                                <field name="margin_pct"/>
+                            </group>
+                        </page>
+                        <page string="Notes">
+                            <field name="notes"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <!-- PORT-19: this div-based chatter may need to become <chatter/> on the 19.0 branch -->
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="fleet_trip_view_tree" model="ir.ui.view">
+        <field name="name">fleet.trip.view.tree</field>
+        <field name="model">fleet.trip</field>
+        <field name="arch" type="xml">
+            <!-- PORT-19: switch <tree> to <list> on the 19.0 branch -->
+            <tree string="Fleet Trips">
+                <field name="name"/>
+                <field name="vehicle_id"/>
+                <field name="driver_id"/>
+                <field name="date_start"/>
+                <field name="state"/>
+                <field name="currency_id" column_invisible="1"/>
+                <field name="distance_km" sum="Total Distance"/>
+                <field name="total_cost" sum="Total Cost"/>
+                <field name="revenue" sum="Total Revenue"/>
+                <field name="margin" sum="Total Margin"/>
+                <field name="margin_pct"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="fleet_trip_view_kanban" model="ir.ui.view">
+        <field name="name">fleet.trip.view.kanban</field>
+        <field name="model">fleet.trip</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="state" class="o_kanban_small_column">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_card oe_kanban_global_click">
+                            <strong><field name="name"/></strong>
+                            <div><field name="vehicle_id"/></div>
+                            <div><field name="driver_id"/></div>
+                            <div>
+                                <field name="total_cost" widget="monetary"/>
+                                /
+                                <field name="revenue" widget="monetary"/>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="fleet_trip_view_search" model="ir.ui.view">
+        <field name="name">fleet.trip.view.search</field>
+        <field name="model">fleet.trip</field>
+        <field name="arch" type="xml">
+            <search string="Fleet Trips">
+                <field name="name"/>
+                <field name="vehicle_id"/>
+                <field name="driver_id"/>
+                <filter name="not_cancelled" string="Active Trips" domain="[('state', '!=', 'cancelled')]"/>
+                <separator/>
+                <filter name="draft" string="Draft" domain="[('state', '=', 'draft')]"/>
+                <filter name="in_progress" string="In Progress" domain="[('state', '=', 'in_progress')]"/>
+                <filter name="done" string="Done" domain="[('state', '=', 'done')]"/>
+                <filter name="cancelled" string="Cancelled" domain="[('state', '=', 'cancelled')]"/>
+                <separator/>
+                <filter name="filter_date_start" string="Start Date" date="date_start"/>
+                <group expand="0" string="Group By">
+                    <filter name="groupby_vehicle" string="Vehicle" context="{'group_by': 'vehicle_id'}"/>
+                    <filter name="groupby_driver" string="Driver" context="{'group_by': 'driver_id'}"/>
+                    <filter name="groupby_state" string="State" context="{'group_by': 'state'}"/>
+                    <filter name="groupby_date_start" string="Start Date" context="{'group_by': 'date_start'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>
