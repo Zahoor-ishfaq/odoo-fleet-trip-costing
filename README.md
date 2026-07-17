@@ -38,10 +38,10 @@ with pivot and graph views for fleet-wide profitability analysis.
 git clone https://github.com/Zahoor-ishfaq/odoo-fleet-trip-costing.git
 ```
 
-Point your Odoo `addons_path` at the cloned repository's `addons/`
-directory (or copy `addons/fleet_trip_costing/` into an existing
-custom addons directory), then, as an administrator: Apps -> Update
-Apps List -> search "Fleet Trip Costing" -> Install.
+Point your Odoo `addons_path` at the cloned repository's root
+directory (or copy `fleet_trip_costing/` into an existing custom
+addons directory), then, as an administrator: Apps -> Update Apps
+List -> search "Fleet Trip Costing" -> Install.
 
 **Option 2: Odoo Apps Store**
 
@@ -80,33 +80,33 @@ right of the list.
 ## Screenshots
 
 **Trip form with workflow states**
-![Trip form with workflow states](addons/fleet_trip_costing/static/description/screenshots/trip_view.png)
+![Trip form with workflow states](fleet_trip_costing/static/description/screenshots/trip_view.png)
 
 **Cost lines with auto-computed totals**
-![Cost lines with auto-computed totals](addons/fleet_trip_costing/static/description/screenshots/cost_view.png)
+![Cost lines with auto-computed totals](fleet_trip_costing/static/description/screenshots/cost_view.png)
 
 **Revenue & margin analysis**
-![Revenue and margin analysis](addons/fleet_trip_costing/static/description/screenshots/revenue_view.png)
+![Revenue and margin analysis](fleet_trip_costing/static/description/screenshots/revenue_view.png)
 
 **List view with fleet-wide totals**
-![List view with fleet-wide totals](addons/fleet_trip_costing/static/description/screenshots/list_view.png)
+![List view with fleet-wide totals](fleet_trip_costing/static/description/screenshots/list_view.png)
 
 **Kanban view grouped by state**
-![Kanban view grouped by state](addons/fleet_trip_costing/static/description/screenshots/kanban_view.png)
+![Kanban view grouped by state](fleet_trip_costing/static/description/screenshots/kanban_view.png)
 
 **Pivot analytics: cost, revenue, and margin by vehicle and month**
-![Pivot analytics](addons/fleet_trip_costing/static/description/screenshots/pivot_view.png)
+![Pivot analytics](fleet_trip_costing/static/description/screenshots/pivot_view.png)
 
 **Graph analytics: margin by vehicle**
-![Graph analytics](addons/fleet_trip_costing/static/description/screenshots/graph_view.png)
+![Graph analytics](fleet_trip_costing/static/description/screenshots/graph_view.png)
 
 ### Full Arabic support
 
 The module ships a complete Arabic translation (`i18n/ar.po`), formal
 transport/logistics terminology, right-to-left layout included.
 
-![Trip form in Arabic (RTL)](addons/fleet_trip_costing/static/description/screenshots/trip_arabic.png)
-![Cost lines in Arabic (RTL)](addons/fleet_trip_costing/static/description/screenshots/cost_view_arabic.png)
+![Trip form in Arabic (RTL)](fleet_trip_costing/static/description/screenshots/trip_arabic.png)
+![Cost lines in Arabic (RTL)](fleet_trip_costing/static/description/screenshots/cost_view_arabic.png)
 
 ## Compatibility
 

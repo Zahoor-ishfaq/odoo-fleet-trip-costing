@@ -6,7 +6,7 @@ services:
     ports:
       - "8069:8069"
     volumes:
-      - ./addons:/mnt/extra-addons
+      - ./fleet_trip_costing:/mnt/extra-addons/fleet_trip_costing
       - odoo-web-data:/var/lib/odoo
     command: odoo --dev=all
   db:

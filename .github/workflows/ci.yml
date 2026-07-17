@@ -40,7 +40,7 @@ jobs:
           docker run --rm \
             --network host \
             -e HOST=localhost -e PORT=5432 -e USER=odoo -e PASSWORD=odoo \
-            -v ${{ github.workspace }}/addons:/mnt/extra-addons \
+            -v ${{ github.workspace }}/fleet_trip_costing:/mnt/extra-addons/fleet_trip_costing \
             odoo:17.0 \
             odoo -d ci_test -i fleet_trip_costing \
               --test-enable --test-tags /fleet_trip_costing --stop-after-init
