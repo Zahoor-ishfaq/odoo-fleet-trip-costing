@@ -1,5 +1,5 @@
 from odoo import _, api, fields, models
-from odoo.exceptions import ValidationError
+from odoo.exceptions import UserError, ValidationError
 from odoo.tools import float_is_zero
 
 
@@ -94,6 +94,26 @@ class FleetTrip(models.Model):
                 raise ValidationError(
                     _("End odometer reading cannot be before the start reading.")
                 )
+
+    def action_start(self):
+        if any(trip.state != "draft" for trip in self):
+            raise UserError(_("Only draft trips can be started."))
+        self.write({"state": "in_progress"})
+
+    def action_done(self):
+        if any(trip.state != "in_progress" for trip in self):
+            raise UserError(_("Only trips in progress can be marked done."))
+        self.write({"state": "done"})
+
+    def action_cancel(self):
+        if any(trip.state == "cancelled" for trip in self):
+            raise UserError(_("Trip is already cancelled."))
+        self.write({"state": "cancelled"})
+
+    def action_draft(self):
+        if any(trip.state != "cancelled" for trip in self):
+            raise UserError(_("Only cancelled trips can be reset to draft."))
+        self.write({"state": "draft"})
 
     @api.model_create_multi
     def create(self, vals_list):

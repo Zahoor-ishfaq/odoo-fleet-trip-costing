@@ -5,6 +5,10 @@
         <field name="arch" type="xml">
             <form string="Fleet Trip">
                 <header>
+                    <button name="action_start" type="object" string="Start Trip" class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_done" type="object" string="Mark Done" class="btn-primary" invisible="state != 'in_progress'"/>
+                    <button name="action_cancel" type="object" string="Cancel" invisible="state == 'cancelled'"/>
+                    <button name="action_draft" type="object" string="Reset to Draft" invisible="state != 'cancelled'"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,in_progress,done"/>
                 </header>
                 <sheet>
