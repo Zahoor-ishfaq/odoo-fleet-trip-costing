@@ -79,10 +79,34 @@ right of the list.
 
 ## Screenshots
 
-![Trip form view](./static/description/screenshots/form_view.png)
-![Trip list view](./static/description/screenshots/list_view.png)
-![Pivot analytics](./static/description/screenshots/pivot_view.png)
-![Graph analytics](./static/description/screenshots/graph_view.png)
+**Trip form with workflow states**
+![Trip form with workflow states](addons/fleet_trip_costing/static/description/screenshots/trip_view.png)
+
+**Cost lines with auto-computed totals**
+![Cost lines with auto-computed totals](addons/fleet_trip_costing/static/description/screenshots/cost_view.png)
+
+**Revenue & margin analysis**
+![Revenue and margin analysis](addons/fleet_trip_costing/static/description/screenshots/revenue_view.png)
+
+**List view with fleet-wide totals**
+![List view with fleet-wide totals](addons/fleet_trip_costing/static/description/screenshots/list_view.png)
+
+**Kanban view grouped by state**
+![Kanban view grouped by state](addons/fleet_trip_costing/static/description/screenshots/kanban_view.png)
+
+**Pivot analytics: cost, revenue, and margin by vehicle and month**
+![Pivot analytics](addons/fleet_trip_costing/static/description/screenshots/pivot_view.png)
+
+**Graph analytics: margin by vehicle**
+![Graph analytics](addons/fleet_trip_costing/static/description/screenshots/graph_view.png)
+
+### Full Arabic support
+
+The module ships a complete Arabic translation (`i18n/ar.po`), formal
+transport/logistics terminology, right-to-left layout included.
+
+![Trip form in Arabic (RTL)](addons/fleet_trip_costing/static/description/screenshots/trip_arabic.png)
+![Cost lines in Arabic (RTL)](addons/fleet_trip_costing/static/description/screenshots/cost_view_arabic.png)
 
 ## Compatibility
 
