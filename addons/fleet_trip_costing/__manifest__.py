@@ -1,0 +1,18 @@
+{
+    "name": "Fleet Trip Costing & Profitability",
+    "summary": "Per-trip cost capture, cost/km, and margin analytics on Fleet",
+    "version": "17.0.1.0.0",
+    "category": "Human Resources/Fleet",
+    "license": "LGPL-3",
+    "author": "Zahoor Ishfaq",
+    "website": "https://github.com/zahoor-ishfaq/fleet_trip_costing",
+    "depends": ["fleet"],
+    "data": [
+        "security/fleet_trip_security.xml",
+        "security/ir.model.access.csv",
+        "data/fleet_trip_cost_type_data.xml",
+    ],
+    "images": ["static/description/banner.png"],
+    "application": False,
+    "installable": True,
+}

@@ -1,0 +1,26 @@
+<odoo noupdate="1">
+    <record id="fleet_trip_cost_type_fuel" model="fleet.trip.cost.type">
+        <field name="name">Fuel</field>
+        <field name="code">fuel</field>
+    </record>
+    <record id="fleet_trip_cost_type_toll" model="fleet.trip.cost.type">
+        <field name="name">Toll</field>
+        <field name="code">toll</field>
+    </record>
+    <record id="fleet_trip_cost_type_driver_allowance" model="fleet.trip.cost.type">
+        <field name="name">Driver Allowance</field>
+        <field name="code">driver_allowance</field>
+    </record>
+    <record id="fleet_trip_cost_type_maintenance" model="fleet.trip.cost.type">
+        <field name="name">Maintenance Allocation</field>
+        <field name="code">maintenance</field>
+    </record>
+    <record id="fleet_trip_cost_type_depreciation" model="fleet.trip.cost.type">
+        <field name="name">Depreciation</field>
+        <field name="code">depreciation</field>
+    </record>
+    <record id="fleet_trip_cost_type_misc" model="fleet.trip.cost.type">
+        <field name="name">Misc</field>
+        <field name="code">misc</field>
+    </record>
+</odoo>
