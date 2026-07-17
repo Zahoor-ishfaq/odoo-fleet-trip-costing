@@ -1,15 +1,24 @@
+"""Unit tests for fleet.trip per PROJECT_BLUEPRINT.md §9."""
+
+# pylint: disable=import-error
+# lxml and odoo are not installed in the isolated pylint-odoo pre-commit
+# environment.
 import ast
 
 from lxml import etree
-
 from odoo.exceptions import AccessError, UserError, ValidationError
 from odoo.tests import TransactionCase
 from odoo.tools.safe_eval import safe_eval
 
 
 class TestFleetTrip(TransactionCase):
+    """Covers §9's 7-test matrix plus the §6 float-truthiness regression."""
+
     @classmethod
+    # pylint: disable=invalid-name
+    # setUpClass is unittest's mandated override name.
     def setUpClass(cls):
+        """Create a shared vehicle, driver, and baseline trip fixture."""
         super().setUpClass()
         brand = cls.env["fleet.vehicle.model.brand"].create({"name": "Test Brand"})
         model = cls.env["fleet.vehicle.model"].create(
@@ -24,9 +33,11 @@ class TestFleetTrip(TransactionCase):
         )
 
     def test_01_sequence_name(self):
+        """Trip creation gets a TRIP/YYYY/NNNNN sequence name."""
         self.assertRegex(self.trip.name, r"^TRIP/\d{4}/\d{5}$")
 
     def test_02_total_cost_recompute(self):
+        """total_cost sums cost lines and recomputes on add/delete."""
         trip = self.env["fleet.trip"].create(
             {
                 "vehicle_id": self.vehicle.id,
@@ -38,7 +49,9 @@ class TestFleetTrip(TransactionCase):
         )
         self.assertEqual(trip.total_cost, 150.0)
 
-        toll_line = trip.cost_line_ids.filtered(lambda l: l.cost_type_id == self.toll)
+        toll_line = trip.cost_line_ids.filtered(
+            lambda line: line.cost_type_id == self.toll
+        )
         toll_line.unlink()
         self.assertEqual(trip.total_cost, 100.0)
 
@@ -48,6 +61,7 @@ class TestFleetTrip(TransactionCase):
         self.assertEqual(trip.total_cost, 125.0)
 
     def test_03_distance_and_odometer_constraint(self):
+        """distance_km derives from odometers; end < start is blocked."""
         trip = self.env["fleet.trip"].create(
             {
                 "vehicle_id": self.vehicle.id,
@@ -67,16 +81,20 @@ class TestFleetTrip(TransactionCase):
             )
 
     def test_04_cost_per_km_zero_distance_guard(self):
+        """cost_per_km returns 0.0 on zero distance instead of crashing."""
         trip = self.env["fleet.trip"].create(
             {
                 "vehicle_id": self.vehicle.id,
-                "cost_line_ids": [(0, 0, {"cost_type_id": self.fuel.id, "amount": 80.0})],
+                "cost_line_ids": [
+                    (0, 0, {"cost_type_id": self.fuel.id, "amount": 80.0})
+                ],
             }
         )
         self.assertEqual(trip.distance_km, 0.0)
         self.assertEqual(trip.cost_per_km, 0.0)
 
     def test_05_margin_math_including_zero_revenue(self):
+        """margin and margin_pct compute correctly, incl. zero revenue."""
         trip = self.env["fleet.trip"].create(
             {
                 "vehicle_id": self.vehicle.id,
@@ -102,6 +120,7 @@ class TestFleetTrip(TransactionCase):
         self.assertEqual(trip_no_revenue.margin_pct, 0.0)
 
     def test_06_state_flow_and_default_filter(self):
+        """State flow via action methods; cancelled excluded by default."""
         trip = self.trip
         self.assertEqual(trip.state, "draft")
 
@@ -141,21 +160,28 @@ class TestFleetTrip(TransactionCase):
         self.assertEqual(trip.state, "draft")
 
     def test_07_access_and_multi_company_rule(self):
+        """User group CRUD in own company; record rule blocks cross-company."""
         company_b = self.env["res.company"].create({"name": "Test Company B"})
         user = self.env["res.users"].create(
             {
                 "name": "Fleet Trip Test User",
                 "login": "fleet_trip_test_user",
                 "groups_id": [
-                    (6, 0, [self.env.ref("fleet_trip_costing.group_fleet_trip_user").id])
+                    (
+                        6,
+                        0,
+                        [self.env.ref("fleet_trip_costing.group_fleet_trip_user").id],
+                    )
                 ],
                 "company_id": self.env.company.id,
                 "company_ids": [(6, 0, [self.env.company.id])],
             }
         )
 
-        trip = self.env["fleet.trip"].with_user(user).create(
-            {"vehicle_id": self.vehicle.id}
+        trip = (
+            self.env["fleet.trip"]
+            .with_user(user)
+            .create({"vehicle_id": self.vehicle.id})
         )
         self.assertEqual(trip.company_id, self.env.company)
         trip.write({"notes": "updated by user"})
@@ -178,8 +204,11 @@ class TestFleetTrip(TransactionCase):
         )
 
     def test_08_odometer_zero_start_regression(self):
-        # Regression: 0.0 is falsy in Python but a legitimate odometer_start
-        # value; must not be treated as "unset" (PROJECT_BLUEPRINT.md §6).
+        """odometer_start=0.0 is a legitimate value, not "unset".
+
+        0.0 is falsy in Python; must not be treated as "unset"
+        (PROJECT_BLUEPRINT.md §6).
+        """
         trip = self.env["fleet.trip"].create(
             {
                 "vehicle_id": self.vehicle.id,

@@ -7,6 +7,10 @@
     <record id="group_fleet_trip_user" model="res.groups">
         <field name="name">User</field>
         <field name="category_id" ref="module_category_fleet_trip_costing"/>
+        <!-- Without base.group_user, a user with only this group cannot
+             read ir.sequence, which fleet.trip.create() depends on for
+             its TRIP/YYYY/NNNNN numbering. -->
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
     </record>
 
     <record id="group_fleet_trip_manager" model="res.groups">

@@ -1,3 +1,7 @@
+# pylint: disable=missing-module-docstring,pointless-statement
+# Odoo loads this file via ast.literal_eval(), which requires the file to
+# contain exactly one bare expression -- no docstring or other statement
+# can precede the dict literal.
 {
     "name": "Fleet Trip Costing & Profitability",
     "summary": "Per-trip cost capture, cost/km, and margin analytics on Fleet",

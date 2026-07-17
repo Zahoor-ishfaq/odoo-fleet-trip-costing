@@ -1,8 +1,17 @@
+"""Cost type master data and per-trip cost lines."""
+
+# pylint: disable=import-error
+# odoo is not installed in the isolated pylint-odoo pre-commit environment.
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
 
 class FleetTripCostType(models.Model):
+    """Master list of cost categories usable on a trip cost line."""
+
+    # pylint: disable=too-few-public-methods
+    # Odoo models carry no explicit public methods beyond declarative
+    # fields; CRUD behavior comes from the ORM base class.
     _name = "fleet.trip.cost.type"
     _description = "Fleet Trip Cost Type"
     _order = "name"
@@ -13,6 +22,11 @@ class FleetTripCostType(models.Model):
 
 
 class FleetTripCost(models.Model):
+    """A single cost entry (fuel, toll, ...) attached to a fleet.trip."""
+
+    # pylint: disable=too-few-public-methods
+    # Odoo models carry no explicit public methods beyond declarative
+    # fields; CRUD behavior comes from the ORM base class.
     _name = "fleet.trip.cost"
     _description = "Fleet Trip Cost Line"
 
@@ -29,6 +43,7 @@ class FleetTripCost(models.Model):
 
     @api.constrains("amount")
     def _check_amount(self):
+        """Block zero or negative cost amounts."""
         for line in self:
             if line.amount <= 0:
                 raise ValidationError(_("Cost amount must be strictly positive."))
