@@ -1,0 +1,12 @@
+<odoo>
+    <record id="fleet_trip_action" model="ir.actions.act_window">
+        <field name="name">Trips</field>
+        <field name="res_model">fleet.trip</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="search_view_id" ref="fleet_trip_view_search"/>
+        <field name="context">{'search_default_not_cancelled': 1}</field>
+    </record>
+
+    <menuitem id="fleet_trip_menu_root" name="Trips" parent="fleet.menu_root" sequence="5" groups="group_fleet_trip_user"/>
+    <menuitem id="fleet_trip_menu" action="fleet_trip_action" parent="fleet_trip_menu_root" sequence="1"/>
+</odoo>
