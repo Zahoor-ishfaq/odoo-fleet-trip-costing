@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fleet Trip Costing &amp; Profitability</title>
+</head>
+<body style="margin:0; padding:0; font-family:Helvetica,Arial,sans-serif; color:#1f2d2d; background:#ffffff;">
+
+  <!-- Hero -->
+  <div style="background:#0b3d3d; padding:56px 24px; text-align:center;">
+    <h1 style="margin:0 0 12px 0; color:#ffffff; font-size:34px; font-weight:700;">
+      Fleet Trip Costing &amp; Profitability
+    </h1>
+    <p style="margin:0 auto 6px auto; max-width:640px; color:#eafaf6; font-size:20px; font-weight:600;">
+      Know which trips make money.
+    </p>
+    <p style="margin:0 auto; max-width:640px; color:#bcdeda; font-size:15px; line-height:1.5;">
+      Per-trip cost capture, cost/km, and margin analytics on top of Odoo Fleet.
+    </p>
+  </div>
+
+  <!-- Feature block 1: Trip costing -->
+  <div style="max-width:960px; margin:0 auto; padding:48px 24px; display:table; width:100%; box-sizing:border-box;">
+    <div style="display:table-row;">
+      <div style="display:table-cell; width:50%; vertical-align:middle; padding-right:32px;">
+        <h2 style="margin:0 0 12px 0; font-size:22px; color:#0b3d3d;">Trip costing</h2>
+        <p style="margin:0; font-size:15px; line-height:1.6; color:#3a4a4a;">
+          Log cost lines per trip against a configurable list of cost types —
+          fuel, tolls, driver allowance, maintenance allocation, depreciation,
+          and miscellaneous. Total cost is summed automatically as lines are
+          added or removed.
+        </p>
+      </div>
+      <div style="display:table-cell; width:50%; vertical-align:middle;">
+        <img src="screenshots/cost_view.png" alt="Cost lines with auto-computed totals"
+             style="width:100%; height:auto; border:1px solid #dfe6e6; border-radius:6px; display:block;">
+      </div>
+    </div>
+  </div>
+
+  <!-- Feature block 2: Margin analysis (image left this time) -->
+  <div style="max-width:960px; margin:0 auto; padding:48px 24px; display:table; width:100%; box-sizing:border-box; background:#f5faf9;">
+    <div style="display:table-row;">
+      <div style="display:table-cell; width:50%; vertical-align:middle; padding-right:32px;">
+        <img src="screenshots/revenue_view.png" alt="Revenue and margin analysis"
+             style="width:100%; height:auto; border:1px solid #dfe6e6; border-radius:6px; display:block;">
+      </div>
+      <div style="display:table-cell; width:50%; vertical-align:middle; padding-left:32px;">
+        <h2 style="margin:0 0 12px 0; font-size:22px; color:#0b3d3d;">Margin analysis</h2>
+        <p style="margin:0; font-size:15px; line-height:1.6; color:#3a4a4a;">
+          Revenue, total cost, cost per km, margin, and margin percentage are
+          computed and stored on every trip — no exporting to a spreadsheet
+          to find out whether a trip was worth running.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feature block 3: Analytics -->
+  <div style="max-width:960px; margin:0 auto; padding:48px 24px; box-sizing:border-box;">
+    <h2 style="margin:0 0 12px 0; font-size:22px; color:#0b3d3d; text-align:center;">Fleet-wide analytics</h2>
+    <p style="margin:0 auto 28px auto; max-width:640px; font-size:15px; line-height:1.6; color:#3a4a4a; text-align:center;">
+      Pivot and graph views break cost, revenue, and margin down by vehicle,
+      driver, and month — built on Odoo's standard read_group reporting, no
+      custom aggregation code.
+    </p>
+    <div style="display:table; width:100%;">
+      <div style="display:table-row;">
+        <div style="display:table-cell; width:50%; padding-right:12px;">
+          <img src="screenshots/pivot_view.png" alt="Pivot analytics"
+               style="width:100%; height:auto; border:1px solid #dfe6e6; border-radius:6px; display:block;">
+        </div>
+        <div style="display:table-cell; width:50%; padding-left:12px;">
+          <img src="screenshots/graph_view.png" alt="Graph analytics"
+               style="width:100%; height:auto; border:1px solid #dfe6e6; border-radius:6px; display:block;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feature block 4: Workflow -->
+  <div style="max-width:960px; margin:0 auto; padding:48px 24px; display:table; width:100%; box-sizing:border-box; background:#f5faf9;">
+    <div style="display:table-row;">
+      <div style="display:table-cell; width:50%; vertical-align:middle; padding-right:32px;">
+        <h2 style="margin:0 0 12px 0; font-size:22px; color:#0b3d3d;">Clear workflow</h2>
+        <p style="margin:0; font-size:15px; line-height:1.6; color:#3a4a4a;">
+          Trips move through draft, in progress, and done, with cancel and
+          reset available where it makes sense. Every transition is guarded
+          against invalid state changes.
+        </p>
+      </div>
+      <div style="display:table-cell; width:50%; vertical-align:middle;">
+        <img src="screenshots/trip_view.png" alt="Trip form with workflow states"
+             style="width:100%; height:auto; border:1px solid #dfe6e6; border-radius:6px; display:block;">
+      </div>
+    </div>
+  </div>
+
+  <!-- Arabic / RTL highlight -->
+  <div style="background:#0b3d3d; padding:48px 24px;">
+    <div style="max-width:960px; margin:0 auto;">
+      <h2 style="margin:0 0 12px 0; font-size:22px; color:#ffffff; text-align:center;">Full Arabic support</h2>
+      <p style="margin:0 auto 28px auto; max-width:640px; font-size:15px; line-height:1.6; color:#bcdeda; text-align:center;">
+        A complete Arabic translation using formal transport and logistics
+        terminology, with right-to-left layout throughout the interface.
+      </p>
+      <div style="display:table; width:100%;">
+        <div style="display:table-row;">
+          <div style="display:table-cell; width:50%; padding-right:12px;">
+            <img src="screenshots/trip_arabic.png" alt="Trip form in Arabic (RTL)"
+                 style="width:100%; height:auto; border-radius:6px; display:block;">
+          </div>
+          <div style="display:table-cell; width:50%; padding-left:12px;">
+            <img src="screenshots/cost_view_arabic.png" alt="Cost lines in Arabic (RTL)"
+                 style="width:100%; height:auto; border-radius:6px; display:block;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features checklist -->
+  <div style="max-width:720px; margin:0 auto; padding:48px 24px;">
+    <h2 style="margin:0 0 20px 0; font-size:22px; color:#0b3d3d; text-align:center;">What's included</h2>
+    <table style="width:100%; border-collapse:collapse; font-size:15px; color:#3a4a4a;">
+      <tr>
+        <td style="padding:8px 12px 8px 0; width:24px; color:#0b8f6f; font-weight:700;">&#10003;</td>
+        <td style="padding:8px 0;">Trip records linked to vehicle, driver, and route</td>
+      </tr>
+      <tr>
+        <td style="padding:8px 12px 8px 0; color:#0b8f6f; font-weight:700;">&#10003;</td>
+        <td style="padding:8px 0;">Configurable cost types (fuel, tolls, allowance, maintenance, ...)</td>
+      </tr>
+      <tr>
+        <td style="padding:8px 12px 8px 0; color:#0b8f6f; font-weight:700;">&#10003;</td>
+        <td style="padding:8px 0;">Auto-computed distance, cost/km, margin, and margin %</td>
+      </tr>
+      <tr>
+        <td style="padding:8px 12px 8px 0; color:#0b8f6f; font-weight:700;">&#10003;</td>
+        <td style="padding:8px 0;">Draft &rarr; In Progress &rarr; Done workflow with cancel/reset</td>
+      </tr>
+      <tr>
+        <td style="padding:8px 12px 8px 0; color:#0b8f6f; font-weight:700;">&#10003;</td>
+        <td style="padding:8px 0;">Pivot and graph analytics by vehicle, driver, and month</td>
+      </tr>
+      <tr>
+        <td style="padding:8px 12px 8px 0; color:#0b8f6f; font-weight:700;">&#10003;</td>
+        <td style="padding:8px 0;">Multi-company aware, scoped by record rule</td>
+      </tr>
+      <tr>
+        <td style="padding:8px 12px 8px 0; color:#0b8f6f; font-weight:700;">&#10003;</td>
+        <td style="padding:8px 0;">Full Arabic (RTL) translation</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Footer -->
+  <div style="border-top:1px solid #e2e8e8; padding:28px 24px; text-align:center;">
+    <p style="margin:0; font-size:13px; color:#5c6b6b;">
+      Source and issue tracker:
+      <a href="https://github.com/Zahoor-ishfaq/odoo-fleet-trip-costing" style="color:#0b8f6f; text-decoration:none;">
+        github.com/Zahoor-ishfaq/odoo-fleet-trip-costing
+      </a>
+      &middot; Licensed LGPL-3
+    </p>
+  </div>
+
+</body>
+</html>
