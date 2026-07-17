@@ -9,7 +9,7 @@
     "category": "Human Resources/Fleet",
     "license": "LGPL-3",
     "author": "Zahoor Ishfaq",
-    "website": "https://github.com/zahoor-ishfaq/fleet_trip_costing",
+    "website": "https://github.com/Zahoor-ishfaq/odoo-fleet-trip-costing",
     "depends": ["fleet"],
     "data": [
         "security/fleet_trip_security.xml",
