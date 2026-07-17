@@ -3,3 +3,5 @@ access_fleet_trip_cost_type_user,fleet.trip.cost.type.user,model_fleet_trip_cost
 access_fleet_trip_cost_type_manager,fleet.trip.cost.type.manager,model_fleet_trip_cost_type,group_fleet_trip_manager,1,1,1,1
 access_fleet_trip_user,fleet.trip.user,model_fleet_trip,group_fleet_trip_user,1,1,1,0
 access_fleet_trip_manager,fleet.trip.manager,model_fleet_trip,group_fleet_trip_manager,1,1,1,1
+access_fleet_trip_cost_user,fleet.trip.cost.user,model_fleet_trip_cost,group_fleet_trip_user,1,1,1,1
+access_fleet_trip_cost_manager,fleet.trip.cost.manager,model_fleet_trip_cost,group_fleet_trip_manager,1,1,1,1

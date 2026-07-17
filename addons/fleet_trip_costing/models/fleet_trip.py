@@ -1,5 +1,6 @@
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
+from odoo.tools import float_is_zero
 
 
 class FleetTrip(models.Model):
@@ -19,10 +20,15 @@ class FleetTrip(models.Model):
     odometer_end = fields.Float()
     distance_km = fields.Float(compute="_compute_distance_km", store=True, readonly=False)
     is_return_empty = fields.Boolean()
+    cost_line_ids = fields.One2many("fleet.trip.cost", "trip_id")
     revenue = fields.Monetary()
     currency_id = fields.Many2one(
         "res.currency", default=lambda self: self.env.company.currency_id
     )
+    total_cost = fields.Monetary(compute="_compute_total_cost", store=True)
+    cost_per_km = fields.Float(compute="_compute_cost_per_km", store=True)
+    margin = fields.Monetary(compute="_compute_margin", store=True)
+    margin_pct = fields.Float(compute="_compute_margin", store=True)
     state = fields.Selection(
         [
             ("draft", "Draft"),
@@ -40,10 +46,32 @@ class FleetTrip(models.Model):
     @api.depends("odometer_start", "odometer_end")
     def _compute_distance_km(self):
         for trip in self:
-            if trip.odometer_start and trip.odometer_end:
+            if trip.odometer_end:
                 trip.distance_km = trip.odometer_end - trip.odometer_start
             else:
                 trip.distance_km = trip.distance_km
+
+    @api.depends("cost_line_ids.amount")
+    def _compute_total_cost(self):
+        for trip in self:
+            trip.total_cost = sum(trip.cost_line_ids.mapped("amount"))
+
+    @api.depends("total_cost", "distance_km")
+    def _compute_cost_per_km(self):
+        for trip in self:
+            if float_is_zero(trip.distance_km, precision_digits=2):
+                trip.cost_per_km = 0.0
+            else:
+                trip.cost_per_km = trip.total_cost / trip.distance_km
+
+    @api.depends("revenue", "total_cost")
+    def _compute_margin(self):
+        for trip in self:
+            trip.margin = trip.revenue - trip.total_cost
+            if float_is_zero(trip.revenue, precision_digits=2):
+                trip.margin_pct = 0.0
+            else:
+                trip.margin_pct = trip.margin / trip.revenue * 100
 
     @api.onchange("vehicle_id")
     def _onchange_vehicle_id(self):
@@ -62,11 +90,7 @@ class FleetTrip(models.Model):
     @api.constrains("odometer_start", "odometer_end")
     def _check_odometer(self):
         for trip in self:
-            if (
-                trip.odometer_start
-                and trip.odometer_end
-                and trip.odometer_end < trip.odometer_start
-            ):
+            if trip.odometer_end and trip.odometer_end < trip.odometer_start:
                 raise ValidationError(
                     _("End odometer reading cannot be before the start reading.")
                 )
