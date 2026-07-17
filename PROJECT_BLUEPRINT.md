@@ -266,12 +266,12 @@ For Odoo 19: duplicate compose file with `image: odoo:19.0` and a separate DB vo
 
 ---
 
-## 13. Session Rules for the AI (self-instructions)
+## 13. Development Session Rules
 
-1. Read this file at the start of every working session; follow it over memory.
+1. Read this file at the start of every working session; treat it as the source of truth over assumptions or prior habits.
 2. Never expand v1 scope without Zahoor's explicit ok.
 3. Write minimal, optimized, batch-safe ORM code — no filler, no boilerplate beyond the standard structure in §4.
 4. Every model change → update `ir.model.access.csv` + tests in the same step.
-5. All code must pass the §8 hooks conceptually (black-formatted, pylint-odoo clean) as written — don't rely on "fix later."
+5. All code must pass the §8 hooks (black-formatted, pylint-odoo clean) before commit — don't rely on "fix later."
 6. Keep 17→19 portability in mind for every view and API used; note any 19-incompatible construct in a `# PORT-19:` comment.
-7. When finished with a file, state which checklist items (§12) it advances.
+7. When finishing a file or change, note which checklist items (§12) it advances.
