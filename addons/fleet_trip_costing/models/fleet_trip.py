@@ -25,7 +25,10 @@ class FleetTrip(models.Model):
     odometer_start = fields.Float()
     odometer_end = fields.Float()
     distance_km = fields.Float(
-        compute="_compute_distance_km", store=True, readonly=False
+        string="Distance (Km)",
+        compute="_compute_distance_km",
+        store=True,
+        readonly=False,
     )
     is_return_empty = fields.Boolean()
     cost_line_ids = fields.One2many("fleet.trip.cost", "trip_id")

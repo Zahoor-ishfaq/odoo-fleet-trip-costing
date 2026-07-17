@@ -1,0 +1,594 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fleet_trip_costing
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-17 21:01+0000\n"
+"PO-Revision-Date: 2026-07-17 21:01+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip_cost_type__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: fleet_trip_costing
+#: model_terms:ir.ui.view,arch_db:fleet_trip_costing.fleet_trip_view_search
+msgid "Active Trips"
+msgstr "الرحلات النشطة"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip_cost__amount
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: fleet_trip_costing
+#: model_terms:ir.ui.view,arch_db:fleet_trip_costing.fleet_trip_view_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields.selection,name:fleet_trip_costing.selection__fleet_trip__state__cancelled
+#: model_terms:ir.ui.view,arch_db:fleet_trip_costing.fleet_trip_view_search
+msgid "Cancelled"
+msgstr "ملغاة"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip_cost_type__code
+msgid "Code"
+msgstr "الرمز"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: fleet_trip_costing
+#. 'Cost Line' rendered as accounting line-item (بند التكلفة); an alternative
+#. literal rendering is سطر التكلفة -- please confirm preferred usage.
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__cost_line_ids
+#, fuzzy
+msgid "Cost Line"
+msgstr "بند التكلفة"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__cost_per_km
+msgid "Cost Per Km"
+msgstr "التكلفة لكل كم"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip_cost__cost_type_id
+msgid "Cost Type"
+msgstr "نوع التكلفة"
+
+#. module: fleet_trip_costing
+#. odoo-python
+#: code:addons/fleet_trip_costing/models/fleet_trip_cost.py:0
+#, python-format
+msgid "Cost amount must be strictly positive."
+msgstr "يجب أن يكون مبلغ التكلفة موجباً تماماً."
+
+#. module: fleet_trip_costing
+#: model_terms:ir.ui.view,arch_db:fleet_trip_costing.fleet_trip_view_form
+msgid "Costs"
+msgstr "التكاليف"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__create_uid
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip_cost__create_uid
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip_cost_type__create_uid
+msgid "Created by"
+msgstr "أنشئ من قبل"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__create_date
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip_cost__create_date
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip_cost_type__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__currency_id
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip_cost__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip_cost__date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__date_end
+msgid "Date End"
+msgstr "تاريخ الانتهاء"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__date_start
+msgid "Date Start"
+msgstr "تاريخ البدء"
+
+#. module: fleet_trip_costing
+#: model:fleet.trip.cost.type,name:fleet_trip_costing.fleet_trip_cost_type_depreciation
+msgid "Depreciation"
+msgstr "الإهلاك"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__display_name
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip_cost__display_name
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip_cost_type__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__distance_km
+msgid "Distance (Km)"
+msgstr "المسافة (كم)"
+
+#. module: fleet_trip_costing
+#. 'Done' trip state has no exact term in the given glossary (Draft/In
+#. Progress/Cancelled were given, Done was not). Chose منتهية (ended/finished,
+#. agreeing with the feminine noun رحلة). مكتملة (completed) or تم
+#. (done/complete) are equally defensible -- please confirm.
+#: model:ir.model.fields.selection,name:fleet_trip_costing.selection__fleet_trip__state__done
+#: model_terms:ir.ui.view,arch_db:fleet_trip_costing.fleet_trip_view_search
+#, fuzzy
+msgid "Done"
+msgstr "منتهية"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields.selection,name:fleet_trip_costing.selection__fleet_trip__state__draft
+#: model_terms:ir.ui.view,arch_db:fleet_trip_costing.fleet_trip_view_search
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__driver_id
+#: model_terms:ir.ui.view,arch_db:fleet_trip_costing.fleet_trip_view_search
+msgid "Driver"
+msgstr "السائق"
+
+#. module: fleet_trip_costing
+#: model:fleet.trip.cost.type,name:fleet_trip_costing.fleet_trip_cost_type_driver_allowance
+msgid "Driver Allowance"
+msgstr "بدل السائق"
+
+#. module: fleet_trip_costing
+#. odoo-python
+#: code:addons/fleet_trip_costing/models/fleet_trip.py:0
+#, python-format
+msgid "End odometer reading cannot be before the start reading."
+msgstr "لا يمكن أن تكون قراءة العداد النهائية قبل قراءة البداية."
+
+#. module: fleet_trip_costing
+#: model:ir.model,name:fleet_trip_costing.model_fleet_trip
+#: model_terms:ir.ui.view,arch_db:fleet_trip_costing.fleet_trip_view_form
+msgid "Fleet Trip"
+msgstr "رحلة الأسطول"
+
+#. module: fleet_trip_costing
+#: model:ir.model,name:fleet_trip_costing.model_fleet_trip_cost
+msgid "Fleet Trip Cost Line"
+msgstr "بند تكلفة الرحلة"
+
+#. module: fleet_trip_costing
+#: model:ir.model,name:fleet_trip_costing.model_fleet_trip_cost_type
+msgid "Fleet Trip Cost Type"
+msgstr "نوع تكلفة الرحلة"
+
+#. module: fleet_trip_costing
+#: model:ir.module.category,name:fleet_trip_costing.module_category_fleet_trip_costing
+msgid "Fleet Trip Costing"
+msgstr "تكلفة رحلات الأسطول"
+
+#. module: fleet_trip_costing
+#: model_terms:ir.ui.view,arch_db:fleet_trip_costing.fleet_trip_view_search
+#: model_terms:ir.ui.view,arch_db:fleet_trip_costing.fleet_trip_view_tree
+msgid "Fleet Trips"
+msgstr "رحلات الأسطول"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,help:fleet_trip_costing.field_fleet_trip__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font Awesome، مثال: fa-tasks"
+
+#. module: fleet_trip_costing
+#: model:fleet.trip.cost.type,name:fleet_trip_costing.fleet_trip_cost_type_fuel
+msgid "Fuel"
+msgstr "وقود"
+
+#. module: fleet_trip_costing
+#: model_terms:ir.ui.view,arch_db:fleet_trip_costing.fleet_trip_view_search
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__id
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip_cost__id
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip_cost_type__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__activity_exception_icon
+msgid "Icon"
+msgstr "أيقونة"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,help:fleet_trip_costing.field_fleet_trip__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للإشارة إلى نشاط استثنائي."
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,help:fleet_trip_costing.field_fleet_trip__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم التحديد، فإن الرسائل الجديدة تتطلب انتباهك."
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,help:fleet_trip_costing.field_fleet_trip__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم التحديد، فإن بعض الرسائل بها خطأ في التسليم."
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields.selection,name:fleet_trip_costing.selection__fleet_trip__state__in_progress
+#: model_terms:ir.ui.view,arch_db:fleet_trip_costing.fleet_trip_view_search
+msgid "In Progress"
+msgstr "قيد التنفيذ"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__is_return_empty
+msgid "Is Return Empty"
+msgstr "عودة فارغة"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__write_uid
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip_cost__write_uid
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip_cost_type__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__write_date
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip_cost__write_date
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip_cost_type__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: fleet_trip_costing
+#: model:fleet.trip.cost.type,name:fleet_trip_costing.fleet_trip_cost_type_maintenance
+msgid "Maintenance Allocation"
+msgstr "تخصيص الصيانة"
+
+#. module: fleet_trip_costing
+#: model:res.groups,name:fleet_trip_costing.group_fleet_trip_manager
+msgid "Manager"
+msgstr "المدير"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__margin
+msgid "Margin"
+msgstr "الهامش"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__margin_pct
+msgid "Margin Pct"
+msgstr "نسبة الهامش"
+
+#. module: fleet_trip_costing
+#: model_terms:ir.ui.view,arch_db:fleet_trip_costing.fleet_trip_view_graph
+msgid "Margin by Vehicle"
+msgstr "الهامش حسب المركبة"
+
+#. module: fleet_trip_costing
+#: model_terms:ir.ui.view,arch_db:fleet_trip_costing.fleet_trip_view_form
+msgid "Mark Done"
+msgstr "إنهاء الرحلة"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: fleet_trip_costing
+#: model:fleet.trip.cost.type,name:fleet_trip_costing.fleet_trip_cost_type_misc
+msgid "Misc"
+msgstr "متفرقات"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__name
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip_cost_type__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: fleet_trip_costing
+#. odoo-python
+#: code:addons/fleet_trip_costing/models/fleet_trip.py:0
+#: code:addons/fleet_trip_costing/models/fleet_trip.py:0
+#: code:addons/fleet_trip_costing/models/fleet_trip.py:0
+#: code:addons/fleet_trip_costing/models/fleet_trip.py:0
+#, python-format
+msgid "New"
+msgstr "جديد"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip_cost__note
+msgid "Note"
+msgstr "ملاحظة"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__notes
+#: model_terms:ir.ui.view,arch_db:fleet_trip_costing.fleet_trip_view_form
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,help:fleet_trip_costing.field_fleet_trip__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراء"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,help:fleet_trip_costing.field_fleet_trip__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__odometer_end
+msgid "Odometer End"
+msgstr "قراءة العداد النهائية"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__odometer_start
+msgid "Odometer Start"
+msgstr "قراءة العداد الابتدائية"
+
+#. module: fleet_trip_costing
+#. odoo-python
+#: code:addons/fleet_trip_costing/models/fleet_trip.py:0
+#, python-format
+msgid "Only cancelled trips can be reset to draft."
+msgstr "يمكن إعادة الرحلات الملغاة إلى المسودة فقط."
+
+#. module: fleet_trip_costing
+#. odoo-python
+#: code:addons/fleet_trip_costing/models/fleet_trip.py:0
+#, python-format
+msgid "Only draft trips can be started."
+msgstr "يمكن بدء الرحلات في حالة المسودة فقط."
+
+#. module: fleet_trip_costing
+#. odoo-python
+#: code:addons/fleet_trip_costing/models/fleet_trip.py:0
+#, python-format
+msgid "Only trips in progress can be marked done."
+msgstr "يمكن إنهاء الرحلات قيد التنفيذ فقط."
+
+#. module: fleet_trip_costing
+#: model_terms:ir.ui.view,arch_db:fleet_trip_costing.fleet_trip_view_form
+msgid "Reset to Draft"
+msgstr "إعادة إلى المسودة"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__revenue
+msgid "Revenue"
+msgstr "الإيراد"
+
+#. module: fleet_trip_costing
+#: model_terms:ir.ui.view,arch_db:fleet_trip_costing.fleet_trip_view_form
+msgid "Revenue & Margin"
+msgstr "الإيراد والهامش"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__route_from
+msgid "Route From"
+msgstr "نقطة الانطلاق"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__route_to
+msgid "Route To"
+msgstr "نقطة الوصول"
+
+#. module: fleet_trip_costing
+#: model_terms:ir.ui.view,arch_db:fleet_trip_costing.fleet_trip_view_search
+msgid "Start Date"
+msgstr "تاريخ البدء"
+
+#. module: fleet_trip_costing
+#: model_terms:ir.ui.view,arch_db:fleet_trip_costing.fleet_trip_view_form
+msgid "Start Trip"
+msgstr "بدء الرحلة"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__state
+#: model_terms:ir.ui.view,arch_db:fleet_trip_costing.fleet_trip_view_search
+msgid "State"
+msgstr "الحالة"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,help:fleet_trip_costing.field_fleet_trip__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة استناداً إلى الأنشطة\n"
+"متأخر: تاريخ الاستحقاق قد مر\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخطط: أنشطة مستقبلية."
+
+#. module: fleet_trip_costing
+#: model:fleet.trip.cost.type,name:fleet_trip_costing.fleet_trip_cost_type_toll
+msgid "Toll"
+msgstr "رسوم الطريق"
+
+#. module: fleet_trip_costing
+#: model_terms:ir.ui.view,arch_db:fleet_trip_costing.fleet_trip_view_form
+msgid "Total"
+msgstr "الإجمالي"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__total_cost
+#: model_terms:ir.ui.view,arch_db:fleet_trip_costing.fleet_trip_view_tree
+msgid "Total Cost"
+msgstr "إجمالي التكلفة"
+
+#. module: fleet_trip_costing
+#: model_terms:ir.ui.view,arch_db:fleet_trip_costing.fleet_trip_view_tree
+msgid "Total Distance"
+msgstr "إجمالي المسافة"
+
+#. module: fleet_trip_costing
+#: model_terms:ir.ui.view,arch_db:fleet_trip_costing.fleet_trip_view_tree
+msgid "Total Margin"
+msgstr "إجمالي الهامش"
+
+#. module: fleet_trip_costing
+#: model_terms:ir.ui.view,arch_db:fleet_trip_costing.fleet_trip_view_tree
+msgid "Total Revenue"
+msgstr "إجمالي الإيراد"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip_cost__trip_id
+msgid "Trip"
+msgstr "الرحلة"
+
+#. module: fleet_trip_costing
+#: model_terms:ir.ui.view,arch_db:fleet_trip_costing.fleet_trip_view_pivot
+msgid "Trip Profitability"
+msgstr "ربحية الرحلات"
+
+#. module: fleet_trip_costing
+#. odoo-python
+#: code:addons/fleet_trip_costing/models/fleet_trip.py:0
+#, python-format
+msgid "Trip end date/time cannot be before the start date/time."
+msgstr "لا يمكن أن يكون تاريخ/وقت انتهاء الرحلة قبل تاريخ/وقت البداية."
+
+#. module: fleet_trip_costing
+#. odoo-python
+#: code:addons/fleet_trip_costing/models/fleet_trip.py:0
+#, python-format
+msgid "Trip is already cancelled."
+msgstr "الرحلة ملغاة بالفعل."
+
+#. module: fleet_trip_costing
+#: model:ir.actions.act_window,name:fleet_trip_costing.fleet_trip_action
+#: model:ir.ui.menu,name:fleet_trip_costing.fleet_trip_menu
+#: model:ir.ui.menu,name:fleet_trip_costing.fleet_trip_menu_root
+msgid "Trips"
+msgstr "الرحلات"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,help:fleet_trip_costing.field_fleet_trip__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع نشاط الاستثناء المسجل."
+
+#. module: fleet_trip_costing
+#: model:res.groups,name:fleet_trip_costing.group_fleet_trip_user
+msgid "User"
+msgstr "المستخدم"
+
+#. module: fleet_trip_costing
+#: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__vehicle_id
+#: model_terms:ir.ui.view,arch_db:fleet_trip_costing.fleet_trip_view_search
+msgid "Vehicle"
+msgstr "المركبة"
