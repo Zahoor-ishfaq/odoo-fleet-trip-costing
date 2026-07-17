@@ -83,10 +83,7 @@ msgid "Company"
 msgstr "الشركة"
 
 #. module: fleet_trip_costing
-#. 'Cost Line' rendered as accounting line-item (بند التكلفة); an alternative
-#. literal rendering is سطر التكلفة -- please confirm preferred usage.
 #: model:ir.model.fields,field_description:fleet_trip_costing.field_fleet_trip__cost_line_ids
-#, fuzzy
 msgid "Cost Line"
 msgstr "بند التكلفة"
 
@@ -165,15 +162,10 @@ msgid "Distance (Km)"
 msgstr "المسافة (كم)"
 
 #. module: fleet_trip_costing
-#. 'Done' trip state has no exact term in the given glossary (Draft/In
-#. Progress/Cancelled were given, Done was not). Chose منتهية (ended/finished,
-#. agreeing with the feminine noun رحلة). مكتملة (completed) or تم
-#. (done/complete) are equally defensible -- please confirm.
 #: model:ir.model.fields.selection,name:fleet_trip_costing.selection__fleet_trip__state__done
 #: model_terms:ir.ui.view,arch_db:fleet_trip_costing.fleet_trip_view_search
-#, fuzzy
 msgid "Done"
-msgstr "منتهية"
+msgstr "مكتملة"
 
 #. module: fleet_trip_costing
 #: model:ir.model.fields.selection,name:fleet_trip_costing.selection__fleet_trip__state__draft
