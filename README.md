@@ -3,7 +3,7 @@
 Per-trip cost capture, cost/km, and margin analytics on Fleet.
 
 [![CI](https://github.com/Zahoor-ishfaq/odoo-fleet-trip-costing/actions/workflows/ci.yml/badge.svg?branch=17.0)](https://github.com/Zahoor-ishfaq/odoo-fleet-trip-costing/actions/workflows/ci.yml)
-[![License: LGPL-3](https://img.shields.io/badge/license-LGPL--3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0.html)
+[![License: LGPL-3](https://img.shields.io/badge/license-LGPL--3-blue.svg)](./LICENSE)
 
 ## Why this module
 
@@ -117,7 +117,7 @@ transport/logistics terminology, right-to-left layout included.
 
 ## License
 
-LGPL-3. See the [LGPL-3.0 license text](https://www.gnu.org/licenses/lgpl-3.0.html).
+LGPL-3. See [LICENSE](./LICENSE) for the full text.
 
 ## Author
 
