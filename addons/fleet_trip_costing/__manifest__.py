@@ -10,6 +10,7 @@
     "data": [
         "security/fleet_trip_security.xml",
         "security/ir.model.access.csv",
+        "data/fleet_trip_sequence.xml",
         "data/fleet_trip_cost_type_data.xml",
     ],
     "images": ["static/description/banner.png"],

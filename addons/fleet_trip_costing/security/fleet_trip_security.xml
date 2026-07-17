@@ -14,4 +14,11 @@
         <field name="category_id" ref="module_category_fleet_trip_costing"/>
         <field name="implied_ids" eval="[(4, ref('group_fleet_trip_user'))]"/>
     </record>
+
+    <record id="fleet_trip_company_rule" model="ir.rule">
+        <field name="name">Fleet Trip: multi-company</field>
+        <field name="model_id" ref="model_fleet_trip"/>
+        <field name="groups" eval="[(4, ref('group_fleet_trip_user'))]"/>
+        <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+    </record>
 </odoo>

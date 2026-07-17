@@ -1,3 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_fleet_trip_cost_type_user,fleet.trip.cost.type.user,model_fleet_trip_cost_type,group_fleet_trip_user,1,0,0,0
 access_fleet_trip_cost_type_manager,fleet.trip.cost.type.manager,model_fleet_trip_cost_type,group_fleet_trip_manager,1,1,1,1
+access_fleet_trip_user,fleet.trip.user,model_fleet_trip,group_fleet_trip_user,1,1,1,0
+access_fleet_trip_manager,fleet.trip.manager,model_fleet_trip,group_fleet_trip_manager,1,1,1,1
