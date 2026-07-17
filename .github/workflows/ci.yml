@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches: ["17.0"]
+  pull_request:
+    branches: ["17.0"]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - run: pip install pre-commit
+      - run: pre-commit run -a
+
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_USER: odoo
+          POSTGRES_PASSWORD: odoo
+          POSTGRES_DB: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install fleet_trip_costing with tests enabled
+        run: |
+          docker run --rm \
+            --network host \
+            -e HOST=localhost -e PORT=5432 -e USER=odoo -e PASSWORD=odoo \
+            -v ${{ github.workspace }}/addons:/mnt/extra-addons \
+            odoo:17.0 \
+            odoo -d ci_test -i fleet_trip_costing \
+              --test-enable --test-tags /fleet_trip_costing --stop-after-init
