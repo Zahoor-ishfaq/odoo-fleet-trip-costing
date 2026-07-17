@@ -14,6 +14,7 @@
         "data/fleet_trip_cost_type_data.xml",
         "views/fleet_trip_views.xml",
         "views/fleet_trip_menus.xml",
+        "views/fleet_trip_analytics.xml",
     ],
     "images": ["static/description/banner.png"],
     "application": False,
