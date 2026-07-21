@@ -20,7 +20,7 @@
         "views/fleet_trip_menus.xml",
         "views/fleet_trip_analytics.xml",
     ],
-    "images": ["static/description/screenshots/trip_view.png"],
+    "images": ["static/description/thumbnail.png"],
     "application": False,
     "installable": True,
 }
